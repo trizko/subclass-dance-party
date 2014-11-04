@@ -1,12 +1,42 @@
 var MoonDancer = function(top, left, timeBetweenSteps){
-  Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass("moonDancer");
+  Dancer.call(this, top, left, 150);
+  this.mjArray = [];
+  for(var i = 1; i <= 7; i++){
+    this.mjArray.push('url(img/mjleft/mj' + i + '.png)');
+  }
+  for(var i = 1; i <= 4; i++){
+    this.mjArray.push('url(img/mjturn/mj' + i + '.png)');
+  }
+  for(var i = 1; i <= 7; i++){
+    this.mjArray.push('url(img/mjright/mj' + i + '.png)');
+  }
+  for(var i = 4; i >= 1; i--){
+    this.mjArray.push('url(img/mjturn/mj' + i + '.png)');
+  }
+  this.currentImage = 0;
+  this.$node.removeClass("dancer").addClass("moonDancer");
 };
 
 MoonDancer.prototype = Object.create(Dancer.prototype);
 MoonDancer.prototype.constructor = MoonDancer;
 
-MoonDancer.prototype.step = function(){
+MoonDancer.prototype.step = function (){
   Dancer.prototype.step.call(this);
-  this.$node.animate({width:'toggle'}, 1000);
+
+  if (typeof this.currentImage === 'number') {
+    if(this.currentImage <= 7){
+      this.$node.css('left', this.left -= 15);
+    } else if(this.currentImage <= 11) {
+    } else if(this.currentImage <= 18) {
+      this.$node.css('left', this.left += 15);
+    } else {
+      if(this.currentImage === this.mjArray.length - 1){
+        this.currentImage = 0;
+      }
+    }
+    this.$node.css('background-image', this.mjArray[this.currentImage]);
+    this.currentImage++;
+  }
 };
+
+

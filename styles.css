@@ -26,8 +26,10 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .moonDancer{
-  border:10px solid white;
-  border-radius:10px;
+  background-image: url('img/mjleft/mj1.png');
+  width: 100px;
+  height: 100px;
+  background-size: 100px 100px;
   position:absolute;
 }
 .blinkyDancer {
