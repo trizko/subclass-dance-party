@@ -25,3 +25,13 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.moonDancer{
+  border:10px solid white;
+  border-radius:10px;
+  position:absolute;
+}
+.blinkyDancer {
+  border: 10px solid blue;
+  border-radius:10px;
+  position:absolute;
+}
