@@ -8,18 +8,5 @@ MoonDancer.prototype.constructor = MoonDancer;
 
 MoonDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
-  this.$node.animate({
-    left: "+=100"
-  }, {
-    duration: 1000,
-    specialEasing: {
-      width: "linear",
-      height: "easeOutBounce"
-    },
-    complete: function(){
-      $(this).animate({
-        left: "-=100"
-      }, 1000);
-    }
-  });
+  this.$node.animate({width:'toggle'}, 1000);
 };
