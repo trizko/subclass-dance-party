@@ -5,9 +5,13 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   this.step();
   this.setPosition();
+  this.chill = false;
+  this.lineUpSpeed = 2000;
 };
 Dancer.prototype.step = function() {
-  setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  if (!this.chill) {
+    setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  }
 };
 Dancer.prototype.setPosition = function() {
   var styleSettings = {
@@ -17,6 +21,13 @@ Dancer.prototype.setPosition = function() {
   this.$node.css(styleSettings);
 };
 Dancer.prototype.lineUp = function() {
-  this.left = 50;
-  this.setPosition();
+  this.$node.animate({
+    left: "0px"}, this.lineUpSpeed);
+  if(!this.chill){
+    this.chill = true;
+  } else {
+    this.chill = false;
+    this.step();
+  }
 };
+

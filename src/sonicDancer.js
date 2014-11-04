@@ -8,6 +8,7 @@ var SonicDancer = function(top, left, timeBetweenSteps){
   this.numImages = this.images.length;
   this.currentImage = 0;
   this.$node.removeClass("dancer").addClass("sonicDancer");
+  this.lineUpSpeed = 1000;
 };
 
 SonicDancer.prototype = Object.create(Dancer.prototype);

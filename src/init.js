@@ -32,7 +32,7 @@ $(document).ready(function(){
   });
   $(".lineUpDancersButton").on("click", function(event){
     for (var i = 0; i < window.dancers.length; i++) {
-      window.dancers[i].animate();
+      window.dancers[i].lineUp();
     }
   });
 });
