@@ -38,5 +38,27 @@ $(document).ready(function(){
       window.dancers[i].lineUp();
     }
   });
+  interact();
 });
+var interact = function() {
+  setTimeout(interact, 1000);
+  for (var i = 0; i < window.dancers.length; i++) {
+    var iTop = window.dancers[i].top;
+    var iLeft = window.dancers[i].left;
+    for(var j = 0; j < window.dancers.length; j++){
+      if(!(i === j)){
+        var jTop = window.dancers[j].top;
+        var jLeft = window.dancers[j].left;
+        var topDist = Math.abs(iTop - jTop);
+        var leftDist = Math.abs(iLeft - jLeft);
+        var dist = Math.sqrt(Math.pow(topDist,2) + Math.pow(leftDist,2));
+        if (dist <= 1000) {
+          window.dancers[i].chill = true;
+          window.dancers[j].chill = true;
+        }
+      }
+    }
+  }
+}
+
 
