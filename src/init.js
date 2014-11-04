@@ -52,9 +52,8 @@ var interact = function() {
         var topDist = Math.abs(iTop - jTop);
         var leftDist = Math.abs(iLeft - jLeft);
         var dist = Math.sqrt(Math.pow(topDist,2) + Math.pow(leftDist,2));
-        if (dist <= 1000) {
-          window.dancers[i].chill = true;
-          window.dancers[j].chill = true;
+        if (dist <= 100) {
+          window.dancers[i].explode();
         }
       }
     }

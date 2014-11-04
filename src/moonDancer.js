@@ -50,8 +50,10 @@ MoonDancer.prototype.explode = function() {
   if (typeof this.explodeImage === 'number') {
     this.$node.css('background-image', this.explodeArray[this.explodeImage++]);
   }
+  //remove existence
   if (this.explodeImage === 14) {
     this.$node.remove();
+    window.dancers.splice(window.dancers.indexOf(this), 1);
   }
 };
 
