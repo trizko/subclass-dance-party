@@ -31,3 +31,7 @@ Dancer.prototype.lineUp = function() {
   }
 };
 
+Dancer.prototype.explode = function() {
+
+};
+

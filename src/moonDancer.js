@@ -39,4 +39,8 @@ MoonDancer.prototype.step = function (){
   }
 };
 
+MoonDancer.prototype.explode = function() {
+
+};
+
 

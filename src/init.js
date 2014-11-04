@@ -29,6 +29,9 @@ $(document).ready(function(){
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+    dancer.$node.mouseover(function() {
+      dancer.explode();
+    });
   });
   $(".lineUpDancersButton").on("click", function(event){
     for (var i = 0; i < window.dancers.length; i++) {
