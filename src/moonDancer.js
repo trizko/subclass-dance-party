@@ -13,7 +13,12 @@ var MoonDancer = function(top, left, timeBetweenSteps){
   for(var i = 4; i >= 1; i--){
     this.mjArray.push('url(img/mjturn/mj' + i + '.png)');
   }
+  this.explodeArray = [];
+  for(var i = 0; i <= 14; i++){
+    this.explodeArray.push('url(img/explode/explode' + i + '.png)');
+  }
   this.currentImage = 0;
+  this.explodeImage = 0;
   this.$node.removeClass("dancer").addClass("moonDancer");
 };
 
@@ -40,7 +45,14 @@ MoonDancer.prototype.step = function (){
 };
 
 MoonDancer.prototype.explode = function() {
-
+  this.chill = true;
+  setTimeout(this.explode.bind(this), 50);
+  if (typeof this.explodeImage === 'number') {
+    this.$node.css('background-image', this.explodeArray[this.explodeImage++]);
+  }
+  if (this.explodeImage === 14) {
+    this.$node.remove();
+  }
 };
 
 
