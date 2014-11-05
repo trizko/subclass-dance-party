@@ -2,7 +2,7 @@ var SonicDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, 50);
   this.images = [];
   for(var i = 1; i < 13; i++){
-    this.images.push('url(img/sonic_dance' + i + '.png)');
+    this.images.push('url(img/sonic/sonic_dance' + i + '.png)');
   }
   this.imageStatus = true;
   this.numImages = this.images.length;

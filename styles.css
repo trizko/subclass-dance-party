@@ -38,7 +38,7 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .sonicDancer {
-  background-image: url('img/sonic_dance1.png');
+  background-image: url('img/sonic/sonic_dance1.png');
   width: 30px;
   height: 30px;
   background-size: 30px 30px;
